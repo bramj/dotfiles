@@ -1,0 +1,46 @@
+TAGS
+*~
+.DS_Store
+tmp/*
+tmp/**/*
+*_flymake.*
+?zeus.*
+*.ipr
+*.iws
+.idea/**/*
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# Redis
+*.rdb
+
+.powenv
+.powrc
+.ruby-version
+.rvmrc
+.gradle
+build/
+local.properties
+
+.floo
+.flooignore
+persistent.json
+
+Procfile.local
+REVISION
+*.draft
+*.todo
