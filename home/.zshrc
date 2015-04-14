@@ -1,10 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export EDITOR="subl -w" # wait flag to be able to wait for git commit messages
 export LC_ALL="en_US.UTF-8"
 
 #alias python="python3.4"
 alias mvim="open -a MacVim.app"
+export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim -g -f" # Run macvim in foreground
 
 alias gits="git status"
 alias gitlines="git log --oneline --all | wc -l"
