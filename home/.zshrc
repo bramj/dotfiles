@@ -38,6 +38,9 @@ teste () {
   be rspec
 }
 
+function ruboload() {
+    curl -Lo ~/.rubocop.yml https://raw.githubusercontent.com/Reprazent/hound/master/config/style_guides/ruby.yml
+}
 . Random/z/z.sh
 
 # Set name of the theme to load.
