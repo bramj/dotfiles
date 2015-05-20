@@ -2,7 +2,6 @@
 export ZSH=$HOME/.oh-my-zsh
 export LC_ALL="en_US.UTF-8"
 
-#alias python="python3.4"
 alias mvim="open -a MacVim.app"
 export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim -g -f" # Run macvim in foreground
 
@@ -10,7 +9,7 @@ alias gits="git status"
 alias gitlines="git log --oneline --all | wc -l"
 alias ssh-config="mvim ~/.ssh/config"
 alias zsh-config="mvim ~/.zshrc"
-alias s="foreman start -f Procfile.local"
+
 alias devlog="tail -f log/development.log"
 alias testlog="tail -f log/test.log"
 
