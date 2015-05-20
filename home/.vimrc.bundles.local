@@ -1,0 +1,5 @@
+Bundle "kana/vim-textobj-user"
+Bundle "nelstrom/vim-textobj-rubyblock"
+Bundle "terryma/vim-multiple-cursors"
+Bundle "rstacruz/sparkup"
+Bundle "wesQ3/vim-windowswap"
