@@ -5,8 +5,12 @@ export LC_ALL="en_US.UTF-8"
 alias mvim="open -a MacVim.app"
 export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim -g -f" # Run macvim in foreground
 
+export GOPATH="/Users/bram/Projects"
+
 alias gits="git status"
 alias gitlines="git log --oneline --all | wc -l"
+alias gpr="hub pull-request -b develop"
+
 alias ssh-config="mvim ~/.ssh/config"
 alias zsh-config="mvim ~/.zshrc"
 
