@@ -41,6 +41,16 @@ teste () {
   be rspec
 }
 
+# Copy GitHub public key to clipboard
+ghkey () {
+    if (( $# < 1 ))
+    then
+        echo "usage: ghkey <username>"
+        return 1
+    fi
+    curl -sL https://github.com/$1.keys | pbcopy
+}
+
 function ruboload() {
     curl -Lo ~/.rubocop.yml https://raw.githubusercontent.com/Reprazent/hound/master/config/style_guides/ruby.yml
 }
