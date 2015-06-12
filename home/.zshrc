@@ -17,6 +17,8 @@ alias zsh-config="mvim ~/.zshrc"
 alias devlog="tail -f log/development.log"
 alias testlog="tail -f log/test.log"
 
+alias reload!="source ~/.zshrc"
+
 # From the "Vendor everything" blog post
 alias b="bundle"
 alias bi="b install --path vendor"
@@ -24,6 +26,7 @@ alias bil="bi --local"
 alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
+alias wuk="xxd -l 3 -p /dev/random | tee >(xargs wasko -p) >(cowsay)"
 
 wa () {
   color=$(random_css_color)
