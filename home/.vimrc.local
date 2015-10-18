@@ -1,7 +1,12 @@
-set nocursorline " don't highlight current line
-
 " keyboard shortcuts
 inoremap jj <ESC>
+
+set cursorline          " highlight current line
+
+" move vertically by visual line
+" (for long lines that are broken into 2 lines
+nnoremap j gj
+nnoremap k gk
 
 " highlight search
 set hlsearch
@@ -20,6 +25,8 @@ if (&t_Co == 256 || has('gui_running'))
 endif
 
 set guifont=Menlo\ Regular:h18
+syntax on
+colorscheme harlequin
 " set guifont=Source\ Code\ Pro\ for\ Powerline:h20
 " set guifont=Monospace:h30
 
