@@ -27,6 +27,7 @@ alias bil="bi --local"
 alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
+
 alias wuk="xxd -l 3 -p /dev/random | tee >(xargs wasko -p) >(cowsay)"
 
 wa () {
@@ -58,7 +59,7 @@ ghkey () {
 function ruboload() {
     curl -Lo ~/.rubocop.yml https://raw.githubusercontent.com/Reprazent/hound/master/config/style_guides/ruby.yml
 }
-. Random/z/z.sh
+. ~/Random/z/z.sh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
