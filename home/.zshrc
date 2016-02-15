@@ -14,6 +14,7 @@ alias gpr="hub pull-request -b develop"
 alias ssh-config="mvim ~/.ssh/config"
 alias zsh-config="mvim ~/.zshrc"
 alias git-config="mvim ~/.gitconfig"
+alias ledger-config="mvim ~/.ledgerrc"
 
 alias devlog="tail -f log/development.log"
 alias testlog="tail -f log/test.log"
