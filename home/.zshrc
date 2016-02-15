@@ -3,7 +3,6 @@ export ZSH=$HOME/.oh-my-zsh
 export LC_ALL="en_US.UTF-8"
 
 alias mvim="open -a MacVim.app"
-export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim -g -f" # Run macvim in foreground
 
 export GOPATH="/Users/bram/Projects"
 
