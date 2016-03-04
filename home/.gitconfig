@@ -28,6 +28,7 @@
 	f = fetch
 	r = reset
 	p = push
+        ph = push origin HEAD
 	c = commit
 [core]
 	excludesfile = /Users/bram/.gitignore_global
