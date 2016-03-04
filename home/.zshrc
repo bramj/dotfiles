@@ -61,6 +61,11 @@ function ruboload() {
 }
 . ~/Random/z/z.sh
 
+# Auto-generate brewfile upon `brew something`
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
