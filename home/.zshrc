@@ -4,8 +4,6 @@ export LC_ALL="en_US.UTF-8"
 
 alias mvim="open -a MacVim.app"
 
-export GOPATH="/Users/bram/Projects"
-
 alias gits="git status"
 alias gitlines="git log --oneline --all | wc -l"
 alias gpr="hub pull-request -b develop"
@@ -64,7 +62,6 @@ ghkey () {
 function ruboload() {
     curl -Lo ~/.rubocop.yml https://raw.githubusercontent.com/Reprazent/hound/master/config/style_guides/ruby.yml
 }
-. ~/Random/z/z.sh
 
 . `brew --prefix`/etc/profile.d/z.sh
 
