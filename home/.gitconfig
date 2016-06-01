@@ -1,5 +1,5 @@
 [user]
-	name = bramj
+	name = Bram Jans
 	email = ik@bramjans.com
 [push]
 	default = simple
@@ -27,7 +27,6 @@
 	l = log
 	f = fetch
 	r = reset
-	p = push
         ph = push origin HEAD
 	c = commit
 [core]
