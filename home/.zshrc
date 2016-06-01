@@ -66,6 +66,8 @@ function ruboload() {
 }
 . ~/Random/z/z.sh
 
+. `brew --prefix`/etc/profile.d/z.sh
+
 # Auto-generate brewfile upon `brew something`
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
