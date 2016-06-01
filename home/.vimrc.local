@@ -64,6 +64,8 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_ruby_checkers=["rubocop", "mri"]
 
+let g:notes_directories = ['~/Documents/vimnotes']
+
 " Define a command to make it easier to use
 " Allows you to do: `:QFDo %s/foo/bar/gc`
 command! -nargs=+ QFDo call QFDo(<q-args>)
