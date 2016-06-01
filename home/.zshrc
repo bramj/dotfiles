@@ -30,6 +30,11 @@ alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
 
 alias wuk="xxd -l 3 -p /dev/random | tee >(xargs wasko -p) >(cowsay)"
 
+# Log all the things
+# https://spin.atomicobject.com/2016/05/28/log-bash-history/
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(fc -ln -1)" >> ~/.logs/zsh-history-$(date "+%Y-%m-%d").log; fi'
+precmd() { eval "$PROMPT_COMMAND" }
+
 wa () {
   color=$(random_css_color)
   wasko -p $color
