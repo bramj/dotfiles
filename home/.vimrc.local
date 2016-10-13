@@ -18,17 +18,17 @@ nmap cp :let @+ = expand("%")<CR>
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
   if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme evening
+    colorscheme gruvbox
   else
     colorscheme desert
   endif
 endif
 
-set guifont=Menlo\ Regular:h18
+set guifont=Menlo\ Regular:h16
 syntax on
-colorscheme harlequin
 " set guifont=Source\ Code\ Pro\ for\ Powerline:h20
 " set guifont=Monospace:h30
+colorscheme gruvbox
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "
