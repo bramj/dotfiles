@@ -7,10 +7,13 @@ alias mvim="open -a MacVim.app"
 alias gits="git status"
 alias gitlines="git log --oneline --all | wc -l"
 alias gpr="hub pull-request -b develop"
+alias git-clean-branches="git branch --merged | grep -v \"\*\" | grep -v master | grep -v dev | xargs -n 1 git branch -d"
 
 alias ssh-config="mvim ~/.ssh/config"
 alias zsh-config="mvim ~/.zshrc"
 alias git-config="mvim ~/.gitconfig"
+alias vim-config="mvim ~/.vimrc.local"
+alias vim-bundles="mvim ~/.vimrc.bundles.local"
 alias ledger-config="mvim ~/.ledgerrc"
 
 alias devlog="tail -f log/development.log"
@@ -61,6 +64,19 @@ ghkey () {
 
 function ruboload() {
     curl -Lo ~/.rubocop.yml https://raw.githubusercontent.com/Reprazent/hound/master/config/style_guides/ruby.yml
+}
+
+function migration_touch() {
+  if [ $# != 1 ]
+  then
+    echo "usage: migration_touch <filepath>"
+    return 1
+  fi
+
+  new_timestamp=$(date "+%Y%m%d%H%M%S")
+  new_filename=$(echo $1 | sed -e "s/[0-9]\{14\}/$new_timestamp/")
+  echo "\033[1mTouch\033[0m $new_filename"
+  mv -v $1 $new_filename
 }
 
 . `brew --prefix`/etc/profile.d/z.sh
