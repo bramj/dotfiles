@@ -28,7 +28,9 @@
 	f = fetch
 	r = reset
         ph = push origin HEAD
+        phlease = push origin HEAD --force-with-lease
 	c = commit
+        commend = commit --amend --no-edit
 [core]
 	excludesfile = /Users/bram/.gitignore_global
 [filter "hawser"]
