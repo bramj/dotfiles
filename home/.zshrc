@@ -2,6 +2,9 @@
 export ZSH=$HOME/.oh-my-zsh
 export LC_ALL="en_US.UTF-8"
 
+# Disable Homebrew Google Analytics
+export HOMEBREW_NO_ANALYTICS=1
+
 alias mvim="open -a MacVim.app"
 
 alias gits="git status"
