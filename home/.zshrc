@@ -2,6 +2,12 @@
 export ZSH=$HOME/.oh-my-zsh
 export LC_ALL="en_US.UTF-8"
 
+export PATH=~/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin:/Library/TeX/texbin
+
+export NVM_DIR="/Users/bram/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export GOPATH="/Users/bram/gocode"
+
 # Disable Homebrew Google Analytics
 export HOMEBREW_NO_ANALYTICS=1
 
@@ -67,6 +73,16 @@ ghkey () {
 
 function ruboload() {
     curl -Lo ~/.rubocop.yml https://raw.githubusercontent.com/Reprazent/hound/master/config/style_guides/ruby.yml
+}
+
+function git_current_branch() {
+  local info
+  if test -z $(git rev-parse --git-dir 2> /dev/null); then
+    info=''
+  else
+    info="${$(git symbolic-ref HEAD 2> /dev/null)#refs/heads/}"
+  fi
+  echo -n "$info"
 }
 
 function migration_touch() {
@@ -139,7 +155,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -168,10 +183,3 @@ DEFAULT_USER=bram
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH=/usr/local/sbin:$PATH
-export PATH="~/bin:$PATH"
-
-export NVM_DIR="/Users/bram/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
