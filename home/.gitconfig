@@ -33,6 +33,7 @@
         commend = commit --amend --no-edit
 [core]
 	excludesfile = /Users/bram/.gitignore_global
+	editor = /Users/bram/bin/vim
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
