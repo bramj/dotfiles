@@ -12,6 +12,7 @@ export GOPATH="/Users/bram/gocode"
 export HOMEBREW_NO_ANALYTICS=1
 
 alias mvim="open -a MacVim.app"
+alias v="mvim ."
 
 alias gits="git status"
 alias gitlines="git log --oneline --all | wc -l"
@@ -96,6 +97,10 @@ function migration_touch() {
   new_filename=$(echo $1 | sed -e "s/[0-9]\{14\}/$new_timestamp/")
   echo "\033[1mTouch\033[0m $new_filename"
   mv -v $1 $new_filename
+}
+
+function top_commands() {
+  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
 
 . `brew --prefix`/etc/profile.d/z.sh
