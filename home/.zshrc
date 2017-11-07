@@ -103,6 +103,10 @@ function top_commands() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
 
+function git-stashes() {
+  git stash list | awk -F: '{ print "\n\n\n\n"; print $0; print "\n\n"; system("git -c color.ui=always stash show -p " $1); }' | less -R
+}
+
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Auto-generate brewfile upon `brew something`
