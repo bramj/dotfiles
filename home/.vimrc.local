@@ -99,3 +99,6 @@ function! QFDo(command)
         update
     endfor
 endfunction
+
+" Load correct rvm rubies: https://rvm.io/integration/vim
+set shell=/bin/sh
