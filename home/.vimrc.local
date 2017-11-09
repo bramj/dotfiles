@@ -54,19 +54,11 @@ if has("gui_macvim")
     set shell=/bin/bash\ -l
 endif
 
-" Syntastic Linter
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_ruby_checkers=["rubocop", "mri"]
-" standardjs.com: `npm install standard --global`
-let g:syntastic_javascript_checkers = ['standard']
+" Asynchronous Lint Engine https://github.com/w0rp/ale
+let g:ale_linters = {
+\   'ruby': ['rubocop', 'mri'],
+\}
+let g:ale_fix_on_save = 1
 
 let g:notes_directories = ['~/Documents/vimnotes']
 
