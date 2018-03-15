@@ -48,6 +48,8 @@ endfunction
 command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
 silent! autocmd VimEnter * RemoveConflictingAlignMaps
 
+" Highlighting for Ember .hbs files
+autocmd BufNewFile,BufRead *.hbs   set syntax=handlebars
 
 " FIX: PluginUpdate => git pull: git-sh-setup: No such file or directory in MacVim (OK in non-GUI version of Vim)
 if has("gui_macvim")
