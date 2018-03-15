@@ -103,6 +103,10 @@ function git-stashes() {
   git stash list | awk -F: '{ print "\n\n\n\n"; print $0; print "\n\n"; system("git -c color.ui=always stash show -p " $1); }' | less -R
 }
 
+function stats() {
+    fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep --color=auto -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n20
+}
+
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Auto-generate brewfile upon `brew something`
