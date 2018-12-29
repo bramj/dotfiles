@@ -4,9 +4,8 @@ export LC_ALL="en_US.UTF-8"
 
 export PATH=~/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin:/Library/TeX/texbin
 
-export NVM_DIR="/Users/bram/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export GOPATH="/Users/bram/gocode"
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 # Disable Homebrew Google Analytics
 export HOMEBREW_NO_ANALYTICS=1

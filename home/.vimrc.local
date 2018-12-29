@@ -26,11 +26,11 @@ if (&t_Co == 256 || has('gui_running'))
   endif
 endif
 
-set guifont=Menlo\ Regular:h16
+set guifont=Menlo\ Regular:h15
 syntax on
 " set guifont=Source\ Code\ Pro\ for\ Powerline:h20
 " set guifont=Monospace:h30
-colorscheme gruvbox
+colorscheme Tomorrow-Night
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "

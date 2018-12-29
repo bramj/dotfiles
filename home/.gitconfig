@@ -32,7 +32,7 @@
 	c = commit
         commend = commit --amend --no-edit
 [core]
-	excludesfile = /Users/bram/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = /usr/bin/vim
 [filter "hawser"]
 	clean = git hawser clean %f
