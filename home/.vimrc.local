@@ -20,17 +20,43 @@ nmap cp :let @+ = expand("%")<CR>
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
   if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme gruvbox
+    colorscheme Tomorrow-Night
   else
     colorscheme desert
   endif
 endif
 
-set guifont=Menlo\ Regular:h15
+set guifont=DejaVu\ Sans\ Mono:h15
 syntax on
+
+" ------------------------------------------------------------------------------------------------
+" COLORS
+" ------------------------------------------------------------------------------------------------
+
+" Make sure colored syntax mode is on, and make it Just Work with 256-color terminals.
+set background=dark
+let g:rehash256 = 1 " Something to do with Molokai?
+" colorscheme Tomorrow-Night
+colorscheme Molokai
+
+" Make trailing spaces very visible
+highlight SpecialKey ctermbg=Yellow guibg=Yellow
+
+" Markdown could be more fruit salady
+highlight link markdownH1 PreProc
+highlight link markdownH2 PreProc
+highlight link markdownLink Character
+highlight link markdownBold String
+highlight link markdownItalic Statement
+highlight link markdownCode Delimiter
+highlight link markdownCodeBlock Delimiter
+highlight link markdownListMarker Todo
+
+
+let g:python_highlight_all = 1
+
 " set guifont=Source\ Code\ Pro\ for\ Powerline:h20
 " set guifont=Monospace:h30
-colorscheme Tomorrow-Night
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "
@@ -57,10 +83,13 @@ if has("gui_macvim")
 endif
 
 " Asynchronous Lint Engine https://github.com/w0rp/ale
-let g:ale_linters = {
-\   'ruby': ['rubocop', 'mri'],
-\}
-let g:ale_fix_on_save = 1
+" let g:ale_linters = {
+" \   'ruby': ['rubocop'],
+" \   'javascript': ['eslint']
+" \}
+" let g:ale_linters_explicit = 1
+" Enable integration with vim-airline so lint errors are shown in the status bar
+" let g:airline#extensions#ale#enabled = 1
 
 let g:notes_directories = ['~/Documents/vimnotes']
 
