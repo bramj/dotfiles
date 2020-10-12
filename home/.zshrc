@@ -7,6 +7,9 @@ export PATH=~/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin:/Library/TeX/texbin
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
+# Kiex Elixir version manager: https://github.com/taylor/kiex
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
 # Disable Homebrew Google Analytics
 export HOMEBREW_NO_ANALYTICS=1
 
@@ -24,6 +27,11 @@ alias git-config="mvim ~/.gitconfig"
 alias vim-config="mvim ~/.vimrc.local"
 alias vim-bundles="mvim ~/.vimrc.bundles.local"
 alias ledger-config="mvim ~/.ledgerrc"
+
+# docker
+alias dc="docker-compose"
+alias dcr="docker-compose run"
+alias dclf="dc logs -f --tail=100"
 
 alias devlog="tail -f log/development.log"
 alias testlog="tail -f log/test.log"
@@ -117,7 +125,12 @@ fi
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# Powerlevel9k config: https://github.com/bhilburn/powerlevel9k
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs rvm time)
+POWERLEVEL9K_RVM_VISUAL_IDENTIFIER_COLOR="red"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -181,7 +194,7 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-DEFAULT_USER=bram
+DEFAULT_USER='periplo'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
