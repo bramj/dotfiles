@@ -5,16 +5,13 @@ export LC_ALL="en_US.UTF-8"
 export PATH=~/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin:/Library/TeX/texbin
 
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Kiex Elixir version manager: https://github.com/taylor/kiex
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
-# Disable Homebrew Google Analytics
-export HOMEBREW_NO_ANALYTICS=1
-
-alias mvim="open -a MacVim.app"
-alias v="mvim ."
+alias v="gvim ."
 
 alias gits="git status"
 alias gitlines="git log --oneline --all | wc -l"
@@ -47,6 +44,9 @@ alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
 
 alias wuk="xxd -l 3 -p /dev/random | tee >(xargs wasko -p) >(cowsay)"
+
+alias pbcopy="xclip -selection clipboard"
+alias pbpaste="xclip -selection clipboard -o"
 
 # Log all the things
 # https://spin.atomicobject.com/2016/05/28/log-bash-history/
@@ -114,12 +114,18 @@ function stats() {
     fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep --color=auto -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n20
 }
 
-. `brew --prefix`/etc/profile.d/z.sh
-
-# Auto-generate brewfile upon `brew something`
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  source $(brew --prefix)/etc/brew-wrap
-fi
+# Ibanity functions
+function dashboard-npm-install() {
+  docker-compose stop dashboard
+  rm -v dashboard/package-lock.json
+  echo -n "Removing node_modules... "
+  sudo rm -rf dashboard/node_modules
+  echo "\033[1mDone\033[0m"
+  mkdir dashboard/node_modules
+  sudo chown ibanity dashboard/node_modules
+  docker-compose run --rm dashboard npm install
+  docker-compose start dashboard
+}
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -204,3 +210,19 @@ DEFAULT_USER='periplo'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/bram/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/bram/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/bram/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/bram/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
