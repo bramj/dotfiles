@@ -181,7 +181,7 @@ Style/LeadingCommentSpace:
   Enabled: true
 
 # Cop supports --auto-correct.
-Style/MethodCallParentheses:
+Style/MethodCallWithoutArgsParentheses:
   Enabled: true
 
 # Cop supports --auto-correct.
@@ -266,7 +266,7 @@ Style/SingleLineMethods:
   Enabled: true
 
 # Cop supports --auto-correct.
-Style/SingleSpaceBeforeFirstArg:
+Layout/SpaceBeforeFirstArg:
   Enabled: true
 
 # Cop supports --auto-correct.
@@ -278,7 +278,7 @@ Style/SpaceAfterComma:
   Enabled: true
 
 # Cop supports --auto-correct.
-Style/SpaceAfterControlKeyword:
+Layout/SpaceAroundKeyword:
   Enabled: true
 
 # Cop supports --auto-correct.

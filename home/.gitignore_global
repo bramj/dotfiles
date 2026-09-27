@@ -44,3 +44,7 @@ Procfile.local
 REVISION
 *.draft
 *.todo
+
+hat/assets/webpack/
+
+**/.claude/settings.local.json

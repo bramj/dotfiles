@@ -29,8 +29,8 @@ alias vim-bundles="mvim ~/.vimrc.bundles.local"
 alias ledger-config="mvim ~/.ledgerrc"
 
 # docker
-alias dc="docker-compose"
-alias dcr="docker-compose run"
+alias dc="docker compose"
+alias dcr="docker compose run"
 alias dclf="dc logs -f --tail=100"
 
 alias devlog="tail -f log/development.log"
@@ -47,6 +47,11 @@ alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
 
 alias wuk="xxd -l 3 -p /dev/random | tee >(xargs wasko -p) >(cowsay)"
+
+# ADB - Android Debug Bridge
+alias adb-screencap="adb shell screencap -p > $@"
+alias adb-screenrecord="adb shell screenrecord /sdcard/$@"
+alias adb-screenrecord-get="adb pull /sdcard/$@"
 
 # Log all the things
 # https://spin.atomicobject.com/2016/05/28/log-bash-history/
@@ -129,7 +134,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Powerlevel9k config: https://github.com/bhilburn/powerlevel9k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs rvm time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs custom_pyenv rvm time)
+POWERLEVEL9K_CUSTOM_PYENV="if which python >/dev/null; then echo \$(python -c 'import sys; print(\" \".join(map(str, sys.version.split(\" \")[:2]))[:-1].replace(\" (main\", \"\"))'); fi"
 POWERLEVEL9K_RVM_VISUAL_IDENTIFIER_COLOR="red"
 
 # Uncomment the following line to use case-sensitive completion.

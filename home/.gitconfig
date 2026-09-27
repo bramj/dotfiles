@@ -38,3 +38,14 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
+[init]
+	defaultBranch = main
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential "http://localhost:3200"]
+	provider = generic
+[credential "https://git.openhexa.org"]
+	provider = generic
