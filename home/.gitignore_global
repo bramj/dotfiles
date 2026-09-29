@@ -44,3 +44,11 @@ Procfile.local
 REVISION
 *.draft
 *.todo
+
+# Claude
+.claude_plans/
+
+**/.claude/settings.local.json
+
+**/.claude/.cc-writes/
+.playwright-mcp/

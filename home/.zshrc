@@ -3,6 +3,8 @@ export ZSH=$HOME/.oh-my-zsh
 export LC_ALL="en_US.UTF-8"
 
 export PATH=~/bin:/usr/local/sbin:$PATH:$HOME/.rvm/bin:/Library/TeX/texbin
+export ANDROID_HOME=$HOME/Android/Sdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -26,8 +28,8 @@ alias vim-bundles="mvim ~/.vimrc.bundles.local"
 alias ledger-config="mvim ~/.ledgerrc"
 
 # docker
-alias dc="docker-compose"
-alias dcr="docker-compose run"
+alias dc="docker compose"
+alias dcr="docker compose run"
 alias dclf="dc logs -f --tail=100"
 
 alias devlog="tail -f log/development.log"
@@ -47,6 +49,24 @@ alias wuk="xxd -l 3 -p /dev/random | tee >(xargs wasko -p) >(cowsay)"
 
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
+
+# Load pyenv automatically by appending
+# the following to 
+# ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
+# and ~/.bashrc (for interactive shells) :
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Restart your shell for the changes to take effect.
+
+# Load pyenv-virtualenv automatically by adding
+# the following to ~/.bashrc:
+
+eval "$(pyenv virtualenv-init -)"
+
+
 
 # Log all the things
 # https://spin.atomicobject.com/2016/05/28/log-bash-history/
@@ -226,3 +246,11 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# pnpm
+export PNPM_HOME="/home/bram/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
