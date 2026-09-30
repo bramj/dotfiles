@@ -9,6 +9,6 @@ Fish setup on Fedora:
 ```
 sudo dnf copr enable atim/starship
 sudo dnf copr enable jdxcode/mise
-sudo dnf install fish wl-clipboard starship mise
+sudo dnf install fish wl-clipboard starship mise zoxide fzf
 chsh -s /usr/bin/fish
 ```

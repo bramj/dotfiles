@@ -4,9 +4,12 @@
 # status, background jobs, language versions and time on the right.
 # $username only shows when root or over SSH, which covers context and root_indicator.
 format = "$username$hostname$directory$git_branch$git_state$git_status$character"
-right_format = "$status$jobs$ruby$python$nodejs$time"
+right_format = "$status$cmd_duration$jobs$kubernetes$ruby$python$nodejs$time"
 
 [status]
+disabled = false
+
+[kubernetes]
 disabled = false
 
 [ruby]

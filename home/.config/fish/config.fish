@@ -2,6 +2,8 @@ set -g fish_greeting
 
 fish_add_path -g ~/.local/bin
 
+set -gx EDITOR vim
+
 set -gx ANDROID_HOME $HOME/Android/Sdk
 # JAVA_HOME is set by mise once a Java is active, e.g. `mise use -g java@temurin-8`
 
@@ -22,6 +24,9 @@ if status is-interactive
     # Replaces nvm, pyenv, pyenv-virtualenv and rvm
     type -q mise; and mise activate fish | source
     type -q starship; and starship init fish | source
+    type -q zoxide; and zoxide init fish | source
+    # Ctrl-R history, Ctrl-T files, Alt-C directories
+    type -q fzf; and fzf --fish | source
 
     # Carried over from the oh-my-zsh git plugin
     abbr -a g git
