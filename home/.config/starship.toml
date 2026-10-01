@@ -1,19 +1,17 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# Same layout as the old powerlevel9k prompt: context, dir and git on the left;
-# status, background jobs, language versions and time on the right.
-# $username only shows when root or over SSH, which covers context and root_indicator.
-format = "$username$hostname$directory$git_branch$git_state$git_status$character"
-right_format = "$status$cmd_duration$jobs$kubernetes$ruby$python$nodejs$time"
+# Mirrors the old powerlevel10k lean prompt: dir, git and ❯ on the left;
+# duration, Python venv, user@host, kube context, Node version and time on the right.
+# $username and $hostname only show when root or over SSH.
+format = "$directory$git_branch$git_state$git_status$character"
+right_format = "$cmd_duration$python$username$hostname$kubernetes$nodejs$time"
 
-[status]
-disabled = false
+[character]
+success_symbol = "[❯](bold #FF6AC1)"
+error_symbol = "[❯](bold #FF5C57)"
 
 [kubernetes]
 disabled = false
-
-[ruby]
-style = "bold red"
 
 [time]
 disabled = false
